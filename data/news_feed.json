@@ -1,0 +1,53 @@
+{
+  "header": {
+    "Timestamp": "2025-05-28T12:50:55",
+    "MessageID": "123",
+    "RefToMessageID": "234"
+  },
+  "PayloadInfo": {
+    "PartInfo": {
+      "MessageStandard": "BBC",
+      "MessageType": "Data"
+    }
+  },
+  "referenceData": {
+    "news": {
+      "schemaVersion": "1-0",
+      "value": [
+        {
+          "id": "0184",
+          "region": "NA",
+          "country": "US",
+          "title": "Ad sales boost Time Warner profit",
+          "description": "Quarterly profits at US media giant TimeWarner jumped 76% to $1.13bn (£600m) for the three months to December, from $639m year-earlier.\n\nThe firm, which is now one of the biggest investors in Google, benefited from sales of high-speed internet connections and higher advert sales. TimeWarner said fourth quarter sales rose 2% to $11.1bn from $10.9bn. Its profits were buoyed by one-off gains which offset a profit dip at Warner Bros, and less users for AOL.\n\nTime Warner said on Friday that it now owns 8% of search-engine Google. But its own internet business, AOL, had has mixed fortunes. It lost 464,000 subscribers in the fourth quarter profits were lower than in the preceding three quarters. However, the company said AOL's underlying profit before exceptional items rose 8% on the back of stronger internet advertising revenues. It hopes to increase subscribers by offering the online service free to TimeWarner internet customers and will try to sign up AOL's existing customers for high-speed broadband. TimeWarner also has to restate 2000 and 2003 results following a probe by the US Securities Exchange Commission (SEC), which is close to concluding.\n",
+          "theme": "Business"
+
+        },
+        {
+          "id": "0185",
+          "region": "EMEA",
+          "country": "UK",
+          "title": "Labour plans maternity pay rise",
+          "description": "Maternity pay for new mothers is to rise by £1,400 as part of new proposals announced by the Trade and Industry Secretary Patricia Hewitt.\n\nIt would mean paid leave would be increased to nine months by 2007, Ms Hewitt told GMTV's Sunday programme. Other plans include letting maternity pay be given to fathers and extending rights to parents of older children. The Tories dismissed the maternity pay plan as \"desperate\", while the Liberal Democrats said it was misdirected.\n\nMs Hewitt said: \"We have already doubled the length of maternity pay, it was 13 weeks when we were elected, we have already taken it up to 26 weeks. \"We are going to extend the pay to nine months by 2007 and the aim is to get it right up to the full 12 months by the end of the next Parliament.\" She said new mothers were already entitled to 12 months leave, but that many women could not take it as only six of those months were paid. \"We have made a firm commitment. We will definitely extend the maternity pay, from the six months where it now is to nine months, that's the extra £1,400.\" She said ministers would consult on other proposals that could see fathers being allowed to take some of their partner's maternity pay or leave period, or extending the rights of flexible working to carers or parents of older children. The Shadow Secretary of State for the Family, Theresa May, said: \"These plans were announced by Gordon Brown in his pre-budget review in December and Tony Blair is now recycling it in his desperate bid to win back women voters.\"",
+          "theme": "Politics"
+        },
+        {
+          "id": "0186",
+          "region": "EMEA",
+          "country": "UK",
+          "title": "UK 'needs true immigration data'",
+          "description": "A former Home Office minister has called for an independent body to be set up to monitor UK immigration.\n\nBarbara Roche said an organisation should monitor and publish figures and be independent of government. She said this would counter \"so-called independent\" groups like Migration Watch, which she described as an anti-immigration body posing as independent. Migration Watch says it is not against all immigration and the government already publishes accurate figures. Sir Andrew Green, chairman of the organisation, says there is no need for an independent body because Office of National Statistics data are accurate. He says he opposes large-scale immigration \"both on the grounds of overcrowding and culture\".",
+          "theme": "Politics"
+        },
+        {
+          "id": "0187",
+          "region": "EMEA",
+          "country": "UK",
+          "title": "Dibaba breaks 5,000m world record",
+          "description": "Ethiopia's Tirunesh Dibaba set a new world record in winning the women's 5,000m at the Boston Indoor Games.\n\nDibaba won in 14 minutes 32.93 seconds to erase the previous world indoor mark of 14:39.29 set by another Ethiopian, Berhane Adera, in Stuttgart last year. But compatriot Kenenisa Bekele's record hopes were dashed when he miscounted his laps in the men's 3,000m and staged his sprint finish a lap too soon. Ireland's Alistair Cragg won in 7:39.89 as Bekele battled to second in 7:41.42. \"I didn't want to sit back and get out-kicked,\" said Cragg. \"So I kept on the pace. The plan was to go with 500m to go no matter what, but when Bekele made the mistake that was it. The race was mine.\" Sweden's Carolina Kluft, the Olympic heptathlon champion, and Slovenia's Jolanda Ceplak had winning performances, too. Kluft took the long jump at 6.63m, while Ceplak easily won the women's 800m in 2:01.52.\n",
+          "theme": "Sport"
+        }
+      ]
+    }
+  }
+}

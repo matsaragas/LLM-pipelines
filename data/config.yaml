@@ -1,0 +1,48 @@
+fields:
+  - field: id
+    sources:
+      bbc: id
+    metadata_exclude:
+      llm: true
+      embed: true
+
+  - field: region
+    sources:
+      bbc: region
+    metadata_exclude:
+      llm: true
+      embed: true
+
+  - field: country
+    sources:
+      bbc: country
+    metadata_exclude:
+      llm: true
+      embed: true
+
+  - field: title
+    sources:
+      bbc: title
+    text:
+      heading: Title
+    metadata_exclude:
+      llm: false
+      embed: false
+
+  - field: description
+    sources:
+      bbc: description
+    text:
+      heading: Description
+    metadata_exclude:
+      llm: false
+      embed: false
+
+  - field: theme
+    sources:
+      bbc: theme
+    metadata_exclude:
+      llm: true
+      embed: true
+
+
