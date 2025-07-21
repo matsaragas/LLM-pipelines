@@ -46,3 +46,5 @@ Different Node Parsers:
 
 1) MarkdownNodeParser: It splits a document into Nodes using Markdown header-based splitting logic. Each node contains its text content and the paths
 of the headers leading to it.
+
+![Alt text](images/Ingestion_Pipeline.png)
