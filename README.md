@@ -1,37 +1,88 @@
-General LLM functionality for real scale projects.
+#Purpose
+This repository is focused on building document ingestion pipelines that:
+
+Index documents
+
+Perform intelligent chunking
+
+Generate embeddings
+
+The goal is to make documents efficiently searchable and ready for downstream applications like semantic search and question answering.
 
 
-1. First install postgress using brew: 
-2. `brew install postgresql`
-3. next `brew install make`
-4. Then clone pgvector. Run the following in the terminal: 
-   
-* `/tmp % git clone --branch v0.8.0 https://github.com/pgvector/pgvector.git`
-*  `cd pgvector`
-*  `make install`
 
-Then let's create a postgres DB with PGVector extension. In the terminal run:
+## Installation & Set up
 
-* `brew services start postgresql`
+This project includes general LLM infrastructure suitable for production-scale applications.
 
-* `createdb vectortutorial` . vectortutorial is the name of our db.
-*  Then in the terminal run: `/opt/homebrew/bin/createuser -s postgres` or `/usr/local/opt/postgresql\@14/bin/createuser -s postgres`
-* And finally: `psql --host localhost --username postgres --dbname vectortutorial`
+###1. Install PostgreSQL and Dependencies
 
-To enable my DB to support vectors I run the following inside the db terminal:
+Use Homebrew (for Mac) to install the required packages:
 
-* `CREATE EXTENSION IF NOT EXISTS vector;`
+```shell
+brew install postgresql
+brew install make
+```
 
-Now I can create a TAble with items that can store vectors: 
+###2. Install PGVector Extension
+
+Clone and build the pgvector extension:
+```shell
+git clone --branch v0.8.0 https://github.com/pgvector/pgvector.git
+cd pgvector
+make install
+```
+
+### 3. Set Up PostgreSQL with PGVector
+
+Start PostgreSQL:
+
+```shell
+brew services start postgresql`
+```
+Create a new database:
+```shell
+createdb vectortutorial
+```
+
+Create a superuser (choose the appropriate path based on your system):
+
+```shell
+/opt/homebrew/bin/createuser -s postgres` 
+#or 
+/usr/local/opt/postgresql\@14/bin/createuser -s postgres`
+```
+
+Connect to your database:
+
+```shell
+psql --host localhost --username postgres --dbname vectortutorial
+```
+
+Inside the PostgreSQL terminal, enable the vector extension:
+
+```sql
+CREATE EXTENSION IF NOT EXISTS vector;`
+```
+You can now create tables capable of storing vector embeddings.
 
 
-* OpenSearch Vector Store
 
-To set up a local OpenSearch Instance follow the doc here: [https://opensearch.org/docs/1.0/](doc)
 
-If you run into SSL Issues try the following docker run command instead:
+## OpenSearch Vector Store
 
-`docker run -p 9200:9200 -p 9600:9600 -e "discovery.type=single-node" -e "plugins.security.disabled=true" opensearchproject/opensearch:1.0.1
+To set up a local OpenSearch instance:
+
+Refer to the official documentation:
+
+[OpenSearch 1.0 Docs](https://opensearch.org/docs/1.0/)
+
+If you encounter SSL issues, try this Docker command:
+
+```shell
+docker run -p 9200:9200 -p 9600:9600 -e "discovery.type=single-node" -e "plugins.security.disabled=true" opensearchproject/opensearch:1.0.1
+```
+`
 `
 
 
