@@ -1,4 +1,4 @@
-#Purpose
+# Purpose
 This repository is focused on building document ingestion pipelines that:
 
 Index documents
@@ -15,7 +15,7 @@ The goal is to make documents efficiently searchable and ready for downstream ap
 
 This project includes general LLM infrastructure suitable for production-scale applications.
 
-###1. Install PostgreSQL and Dependencies
+### 1. Install PostgreSQL and Dependencies
 
 Use Homebrew (for Mac) to install the required packages:
 
@@ -24,7 +24,7 @@ brew install postgresql
 brew install make
 ```
 
-###2. Install PGVector Extension
+### 2. Install PGVector Extension
 
 Clone and build the pgvector extension:
 ```shell
