@@ -1,13 +1,24 @@
 # Purpose
-This repository is focused on building document ingestion pipelines that:
+This repository is focused on building and end-to-end document ingestion pipeline that:
 
-Index documents
+* Index documents
 
-Perform intelligent chunking
+* Perform intelligent chunking
 
-Generate embeddings
+* Generate embeddings
 
 The goal is to make documents efficiently searchable and ready for downstream applications like semantic search and question answering.
+
+
+## Ingestion Pipeline
+
+![Alt text](images/Ingestion_Pipeline_1.png)
+
+
+The entire data indexing/ingestion and search pipelines is based on [LlamaIndex](https://www.llamaindex.ai/) and [OpenAI APIs](https://platform.openai.com/docs/overview). The main components and their benefits are desctibed below:
+
+* The data is a sample of news data feed taken from [BBC News Dataset](http://mlg.ucd.ie/datasets/bbc.html). The [dataset](data/news_feed.json) includes each news article's **title**, a **description**, and metadata fields including `doc_id`, `region`, `country` and `theme`.
+* 
 
 
 
@@ -98,7 +109,3 @@ Different Node Parsers:
 1) MarkdownNodeParser: It splits a document into Nodes using Markdown header-based splitting logic. Each node contains its text content and the paths
 of the headers leading to it.
 
-## Ingestion Pipeline
-
-
-![Alt text](images/Ingestion_Pipeline.png)
