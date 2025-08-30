@@ -1,0 +1,4 @@
+contexts:
+  bbc_docs:
+    store_configs:
+       search_pipeline: "hybrid-search-pipeline"
