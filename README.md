@@ -20,7 +20,7 @@ The entire data indexing/ingestion and search pipelines is based on [LlamaIndex]
 * The data is a sample of news data feed taken from [BBC News Dataset](http://mlg.ucd.ie/datasets/bbc.html). The [dataset](data/news_feed.json) includes each news article's **title**, a **description**, and metadata fields including `doc_id`, `region`, `country` and `theme`.
 
 
-* We use LlamaIndex [Document](https://docs.llamaindex.ai/en/stable/module_guides/loading/documents_and_nodes/#documents) to represent unstructured information. A document contains:
+* We use LlamaIndex [Document](https://docs.llamaindex.ai/en/stable/module_guides/loading/documents_and_nodes/#documents) to represent unstructured information. A `Document` contains:
     * `text`: the actual content (e.g., title, description)
     * `metadata`: structured key-value pairs (e.g., id, region, country, region)
     * `excluded_embed_metadata_keys`: A list of metadata keys to exclude when generating embeddings
