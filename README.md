@@ -18,7 +18,27 @@ The goal is to make documents efficiently searchable and ready for downstream ap
 The entire data indexing/ingestion and search pipelines is based on [LlamaIndex](https://www.llamaindex.ai/) and [OpenAI APIs](https://platform.openai.com/docs/overview). The main components and their benefits are desctibed below:
 
 * The data is a sample of news data feed taken from [BBC News Dataset](http://mlg.ucd.ie/datasets/bbc.html). The [dataset](data/news_feed.json) includes each news article's **title**, a **description**, and metadata fields including `doc_id`, `region`, `country` and `theme`.
-* 
+
+
+* We use LlamaIndex [Document](https://docs.llamaindex.ai/en/stable/module_guides/loading/documents_and_nodes/#documents) to represent unstructured information. A document contains:
+    * `text`: the actual content (e.g., title, description)
+    * `metadata`: structured key-value pairs (e.g., id, region, country, region)
+    * `excluded_embed_metadata_keys`: A list of metadata keys to exclude when generating embeddings
+    * `excluded_llm_metadata_keys`: A list of metadata keys to exclude when sending context to the LLM during queries.
+    
+
+* To **index** and **store** the documents we use LlamaIndex `OpensearchVectorClient` and `PostgresDocumentStore` for [document management](storage_service.py).
+  The role of OpenSearchVectorClient is to integrate a vector search-enabled OpenSearch index into the LlamaIndex vector store framework. 
+  It encapsulates the logic for working with OpenSearch (or ElasticSearch) to store and query vector embeddings efficiently.
+
+  
+* We [use](ingestion_service.py) LlamaIndex [IngestionPipeline](https://docs.llamaindex.ai/en/stable/module_guides/loading/ingestion_pipeline/). 
+This is a **pipeline object** that chain together a sequence of *transformations* applied to raw data. 
+  These transformations prepare the data for indexing - things like:
+    * Splitting documents into chunks (Nodes)
+    * Adding metadata
+    * Generating embeddings
+    * Persisting to a vector store or document store
 
 
 
