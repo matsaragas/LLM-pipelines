@@ -129,3 +129,22 @@ Different Node Parsers:
 1) MarkdownNodeParser: It splits a document into Nodes using Markdown header-based splitting logic. Each node contains its text content and the paths
 of the headers leading to it.
 
+
+
+## Start the Application
+
+
+#### 1. Initiate the Backend:
+
+```bash
+cd backend
+python main.py
+```
+
+
+#### 2. Initiate the Frontend
+
+```shell
+cd frontend
+npm start
+```
