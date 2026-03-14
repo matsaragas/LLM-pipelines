@@ -89,7 +89,7 @@ class IngestionService:
     def ingest(
             self,
             documents: List[Document],
-            batch_size: int = 2,
+            batch_size: int = 50,
             batch_process: bool = False
     ) -> IngestionResult:
         """
@@ -98,6 +98,7 @@ class IngestionService:
         final_result = IngestionResult()
 
         if batch_process:
+            print("Batch processing enabled")
             for i in range(0, len(documents), batch_size):
                 batch_result = self.run_ingestion_batch(
                     documents[i:i + batch_size],
