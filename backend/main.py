@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+from contextlib import asynccontextmanager
 import logging
 
 from storage_service import StorageService
@@ -11,15 +12,13 @@ from data_processing import load_schema, load_feed, generate_documents
 # Setup logging
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="Document Ingestion API")
-
 # Global services (initialized on startup)
 storage_service = None
 ingestion_service = None
 query_service = None
 
-@app.on_event("startup")
-async def startup_event():
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     global storage_service, ingestion_service, query_service
     logger.info("Starting up Ingestion API...")
     try:
@@ -36,6 +35,20 @@ async def startup_event():
         logger.error(f"Failed to initialize services during startup: {e}")
         # In a real production app, we might want to exit here if services are critical
         # raise e
+    yield
+    # Cleanup on shutdown (if any)
+    logger.info("Shutting down API...")
+
+app = FastAPI(title="Document Ingestion API", lifespan=lifespan)
+
+from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/health")
 async def health_check():
