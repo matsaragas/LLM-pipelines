@@ -7,12 +7,19 @@ This repository is focused on building and end-to-end document ingestion pipelin
 
 * Generate embeddings
 
+* Perform search on documents 
+
 The goal is to make documents efficiently searchable and ready for downstream applications like semantic search and question answering.
 
 
 ## Ingestion Pipeline
 
 ![Alt text](images/Ingestion_Pipeline_1.png)
+
+
+## UI to Perform Intelligent Search
+
+![Alt text](images/Llama_index_UI.png)
 
 
 The entire data indexing/ingestion and search pipelines is based on [LlamaIndex](https://www.llamaindex.ai/) and [OpenAI APIs](https://platform.openai.com/docs/overview). The main components and their benefits are desctibed below:
